@@ -12,6 +12,13 @@ document.addEventListener("click", function (event) {
   },
 );
 
+document.addEventListener("click", function (event) {
+  console.log(event);
+  if (!event.target.matches(".power-button")) return;
+  event.preventDefault();
+  powerOff();
+});
+
 function getRandomColor() {
   var letters = '0123456789ABCDEF';
   var color = '#';
@@ -19,4 +26,8 @@ function getRandomColor() {
     color += letters[Math.floor(Math.random() * 16)];
   }
   return color;
+}
+
+function powerOff(){
+	window.close();
 }
